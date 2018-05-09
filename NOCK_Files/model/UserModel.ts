@@ -30,8 +30,8 @@ class UserModel {
         this.model = mongooseConnection.model<iUserModels>("Users", this.schema);
     }
 
-    public retrieveAllLists(response:any): any {
-        var query = this.model.find({});
+    public getUser(response:any, filter: Object): any {
+        var query = this.model.findOne(filter);
         query.exec( (err, itemArray) => {
             response.json(itemArray) ;
         });

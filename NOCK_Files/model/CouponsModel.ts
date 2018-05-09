@@ -34,11 +34,22 @@ class CouponsModel {
         this.model = mongooseConnection.model<iCouponsModel>("Coupons", this.schema);
     }
 
-    public retrieveAllLists(response:any): any {
+    public retrieveAllCoupons(response:any): any {
         var query = this.model.find({});
         query.exec( (err, itemArray) => {
             response.json(itemArray) ;
         });
     }
+
+ /*
+    Going forward, we will want a way to search for coupons based on product/store fields
+    The following function is an incomplete version of this
+    public getCouponProduct(response:any, filter: Object): any {
+        var query = this.model.findOne(filter);
+        query.exec( (err, itemArray) => {
+            response.json(itemArray) ;
+        });
+    }
+*/
 }
 export {CouponsModel};
