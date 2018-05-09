@@ -22,8 +22,8 @@ var UserModel = /** @class */ (function () {
     UserModel.prototype.createModel = function () {
         this.model = mongooseConnection.model("Users", this.schema);
     };
-    UserModel.prototype.retrieveAllLists = function (response) {
-        var query = this.model.find({});
+    UserModel.prototype.getUser = function (response, filter) {
+        var query = this.model.findOne(filter);
         query.exec(function (err, itemArray) {
             response.json(itemArray);
         });

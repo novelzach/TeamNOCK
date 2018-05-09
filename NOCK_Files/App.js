@@ -5,7 +5,7 @@ var logger = require("morgan");
 var bodyParser = require("body-parser");
 //import models here
 var CouponsModel_1 = require("./model/CouponsModel");
-var UsersModel_1 = require("./model/UsersModel");
+var UserModel_1 = require("./model/UserModel");
 var App = /** @class */ (function () {
     function App() {
         this.expressApp = express();
@@ -13,7 +13,7 @@ var App = /** @class */ (function () {
         this.routes(); //builds routes for the service
         this.idGenerator = 100;
         this.Coupons = new CouponsModel_1.CouponsModel();
-        this.Users = new UsersModel_1.UsersModel();
+        this.Users = new UserModel_1.UserModel();
         //initialize models here
     }
     App.prototype.middleware = function () {

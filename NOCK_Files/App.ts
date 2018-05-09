@@ -7,14 +7,14 @@ import * as bodyParser from 'body-parser';
 
 //import models here
 import {CouponsModel} from './model/CouponsModel';
-import {UsersModel} from './model/UsersModel';
+import {UserModel} from './model/UserModel';
 import {DataAccess} from './DataAccess';
 
 class App{
     public expressApp: express.Application;
     //declare models here
     public Coupons:CouponsModel;
-    public Users:UsersModel;
+    public Users:UserModel;
     public idGenerator:number;
 
     constructor(){
@@ -23,7 +23,7 @@ class App{
 	this.routes(); //builds routes for the service
 	this.idGenerator = 100;
 	this.Coupons = new CouponsModel();
-	this.Users = new UsersModel();
+	this.Users = new UserModel();
 	//initialize models here
     }
 
