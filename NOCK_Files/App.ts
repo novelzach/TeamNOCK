@@ -37,9 +37,34 @@ class App{
 	let router = express.Router();
 	//router.get here(need paths first)
 
-	//router.post here(need paths and models first)
+	router.get('/app/user/:userID', (req, res) => {
+	    var id = req.params.userID;
+	    console.log('Query single list with id: ' + id);
+	    this.Users.getUser(res, {userID: id});
+	});
+
+	router.get('/app/coupons/', (req, res) => {
+	    console.log('Get all coupons');
+	    this.Coupons.retrieveAllCoupons(res);
+	});
+
+/*
+	router.post('/app/coupons/', (req,res) => {
+	    console.log(req.body);
+	    var jsonObj = req.body;
+	    jsonObj.couponsID = this.idGenerator;
+	    this.Coupons.model.create([jsonObj]), (err) => {
+		if(err){
+		    console.log('Object create failed');
+		}
+	    });
+	    res.send(this.idGenerator.toString());
+	    this.idGenerator++;
+	}); 
+*/
 
 	//expressApp calls here (need above routes first)
+
     }
 }
 
