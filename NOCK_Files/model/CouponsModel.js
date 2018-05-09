@@ -26,7 +26,7 @@ var CouponsModel = /** @class */ (function () {
     CouponsModel.prototype.createModel = function () {
         this.model = mongooseConnection.model("Coupons", this.schema);
     };
-    CouponsModel.prototype.retrieveAllLists = function (response) {
+    CouponsModel.prototype.retrieveAllCoupons = function (response) {
         var query = this.model.find({});
         query.exec(function (err, itemArray) {
             response.json(itemArray);
