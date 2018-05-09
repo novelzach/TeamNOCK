@@ -1,6 +1,6 @@
 import Mongoose = require("mongoose");
 import {DataAccess} from './../DataAccess';
-import {iUserModels} from '../interface/iUserModels';
+import {iUserModels} from '../interface/iUserModel';
 
 let mongooseConnection = DataAccess.mongooseConnection;
 let mongooseObj = DataAccess.mongooseInstance;

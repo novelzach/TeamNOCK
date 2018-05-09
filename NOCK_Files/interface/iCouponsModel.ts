@@ -1,8 +1,8 @@
 import Mongoose = require("mongoose");
 
 interface iCouponsModel extends Mongoose.Document {
-    user: String;
-    coupons: [ {
+    userID: String;
+    fields: [ {
 	product: String;
 	store: String;
 	exp_date: Date;

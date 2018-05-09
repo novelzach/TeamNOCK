@@ -17,6 +17,8 @@ class CouponsModel {
     public createSchema(): void {
         this.schema = new Mongoose.Schema(
             {
+                userID: String,
+                fields: [ {
                 product: String,
                 store: String,
                 exp_date: Date,
@@ -24,6 +26,7 @@ class CouponsModel {
                 is_percent: Boolean,
                 code: String,
                 image: String
+                }]
         });
     }
 
