@@ -10,6 +10,7 @@ interface iCouponsModel extends Mongoose.Document {
 	is_percent: Boolean;
 	code: String;
 	image: String;
+	token_cost: Number;
     }];
 };
 export {iCouponsModel};

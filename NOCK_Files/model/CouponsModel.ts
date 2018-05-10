@@ -25,7 +25,8 @@ class CouponsModel {
                 discount: Number,
                 is_percent: Boolean,
                 code: String,
-                image: String
+                image: String,
+                token_cost: Number
                 }]
         });
     }
