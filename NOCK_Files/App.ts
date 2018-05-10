@@ -64,6 +64,11 @@ class App{
 */
 
 	//expressApp calls here (need above routes first)
+	this.expressApp.use('/', router);
+	this.expressApp.use('/app/json/', express.static('./app/json'));
+	this.expressApp.use('/images', express.static('./img'));
+	this.expressApp.use('/', express.static('./pages'));
+
 
     }
 }
