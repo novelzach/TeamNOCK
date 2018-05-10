@@ -11,7 +11,7 @@ var CouponsModel = /** @class */ (function () {
     }
     CouponsModel.prototype.createSchema = function () {
         this.schema = new Mongoose.Schema({
-            userID: String,
+            userID: Number,
             fields: [{
                     product: String,
                     store: String,
