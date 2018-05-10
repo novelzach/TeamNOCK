@@ -17,7 +17,7 @@ class CouponsModel {
     public createSchema(): void {
         this.schema = new Mongoose.Schema(
             {
-                userID: String,
+                userID: Number,
                 fields: [ {
                 product: String,
                 store: String,
