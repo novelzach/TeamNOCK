@@ -17,6 +17,7 @@ class UserModel {
     public createSchema(): void {
         this.schema = new Mongoose.Schema(
             {
+		userID: Number,
                 fname: String,
                 lname: String,
                 email: String,
@@ -35,6 +36,13 @@ class UserModel {
         query.exec( (err, itemArray) => {
             response.json(itemArray) ;
         });
+    }
+
+    public retrieveAllUsers(response:any): any {
+	var query = this.model.find({});
+	query.exec( (err, itemArray) => {
+	    response.json(itemArray);
+	});
     }
 }
 export {UserModel};

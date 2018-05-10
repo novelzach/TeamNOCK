@@ -11,6 +11,7 @@ var UserModel = /** @class */ (function () {
     }
     UserModel.prototype.createSchema = function () {
         this.schema = new Mongoose.Schema({
+            userID: Number,
             fname: String,
             lname: String,
             email: String,
@@ -24,6 +25,12 @@ var UserModel = /** @class */ (function () {
     };
     UserModel.prototype.getUser = function (response, filter) {
         var query = this.model.findOne(filter);
+        query.exec(function (err, itemArray) {
+            response.json(itemArray);
+        });
+    };
+    UserModel.prototype.retrieveAllUsers = function (response) {
+        var query = this.model.find({});
         query.exec(function (err, itemArray) {
             response.json(itemArray);
         });
