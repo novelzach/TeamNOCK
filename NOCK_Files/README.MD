@@ -26,3 +26,9 @@
 4. tsc AppServer.ts
 
 5. node AppServer.js
+
+localhost:8080/app/users
+
+localhost:8080/app/coupons
+
+localhost:8080/app/user/#
