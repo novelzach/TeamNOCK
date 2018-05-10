@@ -45,7 +45,7 @@ function retrieveCouponsFromServer(url, operation){
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             var returnValues = JSON.parse(xmlhttp.responseText);
-            populateCouponsView('coupons', returnValues);
+            populateCouponsView('home', returnValues);
         }
     }
     xmlhttp.open("GET", url, true);
@@ -90,27 +90,27 @@ function populateUserView(elementID, user){
 //DOM based function
 function populateCouponsView(elementId, coupons) {
     var element = document.getElementById(elementId);
-    var newElement = "";
+    var newElement = "<div class='container'>"; 
 
     for (var i = 0; i < coupons.length; i++) {
-	for(var j = 0; j < coupons.coupons.length; j++){
+	for(var j = 0; j < coupons[i].coupons.length; j++){
 
-	    newElement += 
-	    newElement += 
-	    newElement += 
-	    newElement += 
-	    newElement += 
-	    newElement += 
-	    newElement += 
-	    newElement += 
-	    newElement += 
-	    newElement += 
-	    newElement += 
-	    newElement += 
-	    newElement += 
-	    newElement += 
+	    newElement += "<div class='row'>";
+	    newElement += "<div class='col-lg-10'>";
+	    newElement += "<div class='col-lg-4 col-md-6 mb-4'>";
+	    newElement += "<div class='card h-100'>";
+	    newElement += "<a href='#'><img class='card-img-top' src='http://placehold.it/700x400' alt=''></a>";
+	    newElement += "<div class='card-body'>";
+	    newElement += "<h4 class='card-title'>";
+	    newElement += "<h3>" + coupons[i].coupons[j].product;
+	    newElement += " -- " + coupons[i].coupons[j].store + "</h3>";
+	    newElement += "<h5>T: " + coupons[i].coupons[j].token_cost;
+	    newElement += " -- Discount: " + coupons[i].coupons[j].discount + "</h5></div>";
+	    newElement += "<div class='text-muted'>&#9733; &#9733; &#9733; &#9734;</small></div>";
+	    newElement += "</div></div>";
 	}
     }
+    
 
     element.innerHTML = newElement;
 }
