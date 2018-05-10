@@ -11,16 +11,16 @@ function initXHR(x, value){
     else if (x == 'coupons'){
 
         //      retrievecouponsFromServer('/app/json/coupons.json');
-        retrieveActiveListsFromServer('/app/coupons/', 'coupons');
+        retrievecouponsFromServer('/app/coupons/', 'coupons');
 
         document.getElementById("home").style.display = "none";
         document.getElementById("coupons").style.display = "block";
         document.getElementById("users").style.display = "none";
 
     }
-    else if(x == 'users'){
+    else if(x == 'user'){
 
-        retrieveActiveListsFromServer('/app/coupons/' + value, 'users');
+        retrieveUserFromServer('/app/user/' + value, 'users');
 
         document.getElementById("home").style.display = "none";
         document.getElementById("coupons").style.display = "none";
@@ -37,8 +37,7 @@ function initXHR(x, value){
 
 function retrievecouponsFromServer(url, operation){
     var xmlhttp = new XMLHttpRequest();
-
-xmlhttp.onreadystatechange = function() {
+    xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             var returnValues = JSON.parse(xmlhttp.responseText);
             if (operation == "coupons") {
@@ -52,6 +51,30 @@ xmlhttp.onreadystatechange = function() {
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
 }
+
+
+function retrieveUserFromServer(url, operation){
+    var xmlhttp = new XMLHttpRequest();
+
+    xmlhttp.onreadystatechange = function() {
+	if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+	    var returnValues = JSON.parse(xmlhttp.responseText);
+	    populateUserView('users', returnValues);
+	}
+    }
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();
+}
+
+
+function populateUserView(elementID, user){
+    var element = document.getElementById(elementId);
+    var newElement = "<div class='container'>";
+    
+    newElement += "<h3>user.fname + " " + user.lname</h3>";
+    newElement += "</div>";
+}
+
 //DOM based function
 function populatecouponsView(elementId, coupons) {
     var element = document.getElementById(elementId);
