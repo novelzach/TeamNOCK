@@ -1,5 +1,7 @@
 function initXHR(x, value){
     console.log(x);
+    
+/*    
     if (x == 'home'){
 
         document.getElementById("home").style.display = "block";
@@ -18,39 +20,40 @@ function initXHR(x, value){
         document.getElementById("users").style.display = "none";
 
     }
-    else if(x == 'user'){
+  */
+  
+  if(x == 'user'){
 
         retrieveUserFromServer('/app/user/' + value, 'users');
 
         document.getElementById("home").style.display = "none";
-        document.getElementById("coupons").style.display = "none";
+        //document.getElementById("coupons").style.display = "none";
         document.getElementById("users").style.display = "block";
 
     }
     else{
+	retrieveCouponsFromServer('/app/coupons/', null);
 
         document.getElementById("home").style.display = "block";
-        document.getElementById("coupons").style.display = "none";
+        //document.getElementById("coupons").style.display = "none";
         document.getElementById("users").style.display = "none";
     }
 }
 
-function retrievecouponsFromServer(url, operation){
+function retrieveCouponsFromServer(url, operation){
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             var returnValues = JSON.parse(xmlhttp.responseText);
-            if (operation == "coupons") {
-                populatecouponsView('coupons', returnValues);
-            }
-            else if (operation == "users") {
-                populatecouponsItems('users', returnValues);               
-            }
+            populateCouponsView('coupons', returnValues);
         }
     }
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
 }
+
+
+
 
 
 function retrieveUserFromServer(url, operation){
@@ -68,33 +71,45 @@ function retrieveUserFromServer(url, operation){
 
 
 function populateUserView(elementID, user){
-    var element = document.getElementById(elementId);
+    var element = document.getElementById(elementID);
     var newElement = "<div class='container'>";
-    
-    newElement += "<h3>user.fname + " " + user.lname</h3>";
+    newElement += "<div class='row'>";
+    newElement += "<div class='col-lg-12' align='center'>";
+    newElement += "<div class='col-lg-10 col sm-6 text-center mb-4'>";
+    newElement += "<h3>" + user.fname + " " + user.lname + "</h3>";
+    newElement += "<img class='rounded-circle img-fluid d-block mx-auto'";
+    newElement += "src='http://placehold.it/200x200' alt=''>";
+    newElement += "<h4>" + user.user + "</h4>";
+    newElement += "<h4>" + "Tokens: " + user.tokens + "</h4>";
+    newElement += "</div></div></div>";
     newElement += "</div>";
+
+    element.innerHTML = newElement;
 }
 
 //DOM based function
-function populatecouponsView(elementId, coupons) {
+function populateCouponsView(elementId, coupons) {
     var element = document.getElementById(elementId);
-    var newElement = "<h3 class=\"panel-heading\">Coupons</h3>";
+    var newElement = "";
 
     for (var i = 0; i < coupons.length; i++) {
-        newElement += "<div class=\"panel panel-default\">";
-        newElement += "<h4 class=\"panel-heading\"><a href=\"javascript:initXHR('users'," +  (i+1) + ")\">" + (i + 1) + ". " + coupons[i].name + "</a></h4>";
-        newElement += "<div class=\"panel-body\">";
-        newElement += "<p>" + coupons[i].description  + "</p>";
-        newElement += "</div>";
-        newElement += "<table class=\"table\" style=\"font-size:10pt;\">";
-        newElement += "<tbody>";
-        newElement += "<tr>";
-        newElement += "<td>Due: <span>" + coupons[i].due + "</span></td>";
-        newElement += "<td align=\"right\">Items: <span class=\"badge\">" + coupons[i].items + "</span></td>";
-        newElement += "</tr>";
-        newElement += "</tbody>";
-        newElement += "</table>";
-        newElement += "</div>";
+	for(var j = 0; j < coupons.coupons.length; j++){
+
+	    newElement += 
+	    newElement += 
+	    newElement += 
+	    newElement += 
+	    newElement += 
+	    newElement += 
+	    newElement += 
+	    newElement += 
+	    newElement += 
+	    newElement += 
+	    newElement += 
+	    newElement += 
+	    newElement += 
+	    newElement += 
+	}
     }
 
     element.innerHTML = newElement;

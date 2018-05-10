@@ -54,15 +54,6 @@ couponsCollection.insert(
 	user : "ongo",
 	coupons : [
 	 {
-		product: "soap",
-		store: "walmart",
-		exp_date: Date("2018-07-07"),
-		discount: 10,
-		is_percent: true,
-		code: "12345zxc",
-		image: "image here"
-	 },
-	 {
 		product: "brush",
 		store: "walmart",
 		exp_date: Date("2018-07-17"),
