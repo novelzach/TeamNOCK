@@ -3,6 +3,6 @@ db.createUser(
 {
     user: "dbAdmin",
     pwd: "test",
-    roles: [ "readWriteAnyDatabase", "dbAdminAnyDatabase", "clisterAdmin"]
+    roles: [ "readWriteAnyDatabase", "dbAdminAnyDatabase", "clusterAdmin"]
 }
 )
