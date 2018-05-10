@@ -39,7 +39,7 @@ class App{
 
 	router.get('/app/user/:userID', (req, res) => {
 	    var id = req.params.userID;
-	    console.log('Query single list with id: ' + id);
+	    console.log('Query single user with id: ' + id);
 	    this.Users.getUser(res, {userID: id});
 	});
 
@@ -48,6 +48,10 @@ class App{
 	    this.Coupons.retrieveAllCoupons(res);
 	});
 
+	router.get('/app/users/', (req,res) => {
+	    console.log('Get all users');
+	    this.Users.retrieveAllUsers(res);
+	});
 /*
 	router.post('/app/coupons/', (req,res) => {
 	    console.log(req.body);

@@ -4,6 +4,7 @@ usersCollection = db.getCollection("users")
 usersCollection.remove({})
 usersCollection.insert(
 {
+	  userID: 1,
 	  fname: "Olsen",
 	  lname : "Ong",
 	  email: "ongo@seattleu.edu",
@@ -14,6 +15,7 @@ usersCollection.insert(
 )
 usersCollection.insert(
 {
+	  userID: 2,
 	  fname: "Zachary",
 	  lname : "Brooks",
 	  email: "brooksz@seattleu.edu",
@@ -24,6 +26,7 @@ usersCollection.insert(
 )
 usersCollection.insert(
 {
+	  userID: 3,
 	  fname: "Charles",
 	  lname : "Rothbacher",
 	  email: "rothbach@seattleu.edu",
@@ -34,6 +37,7 @@ usersCollection.insert(
 )
 usersCollection.insert(
 {
+	  userID: 4,
 	  fname: "Kinjal",
 	  lname : "Mistry",
 	  email: "mistrykinjal@seattleu.edu",

@@ -5,7 +5,7 @@
 //run first script to start the backend
 1. ./startDBSample
 
-//run a starting client
+//open new terminal and run a starting client
 
 2. mongo --port 3000
 
@@ -17,8 +17,12 @@
     load ('createTestUser.js'); 
     exit
 
-//run second script to start the admin client 
+//run this command to start the admin client 
 
-3. ./startClientSample.sh
+3. mongo --port 3000 -u dbAdmin -p test --authenticationDatabase admin
 
-//creating the user and running the user script doesn't 100% work yet.
+//open new terminal and run
+
+4. tsc AppServer.ts
+
+5. node AppServer.js
