@@ -60,7 +60,8 @@ couponsCollection.insert(
 		discount: 15,
 		is_percent: false,
 		code: "12345zxc",
-		image: "image here"
+		image: "image here",
+		token_cost: 5
 	 }
 	]
 }
@@ -76,7 +77,8 @@ couponsCollection.insert(
 		discount: 10,
 		is_percent: true,
 		code: "12345zxc",
-		image: "image here"
+		image: "image here",
+		token_cost: 7
 	 },
 	 {
 		product: "camera",
@@ -85,7 +87,8 @@ couponsCollection.insert(
 		discount: 15,
 		is_percent: false,
 		code: "12345zxc",
-		image: "image here"
+		image: "image here",
+		token_cost: 10
 	 }
 	]
 }
@@ -101,7 +104,8 @@ couponsCollection.insert(
 		discount: 10,
 		is_percent: true,
 		code: "12345zxc",
-		image: "image here"
+		image: "image here",
+		token_cost: 5
 	 },
 	 {
 		product: "somethin",
@@ -110,7 +114,8 @@ couponsCollection.insert(
 		discount: 15,
 		is_percent: false,
 		code: "12345zxc",
-		image: "image here"
+		image: "image here",
+		token_cost: 2
 	 }
 	]
 }
@@ -126,7 +131,8 @@ couponsCollection.insert(
 		discount: 10,
 		is_percent: true,
 		code: "12345zxc",
-		image: "image here"
+		image: "image here",
+		token_cost: 15
 	 }
 	]
 }
