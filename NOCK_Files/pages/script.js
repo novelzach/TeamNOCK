@@ -90,11 +90,23 @@ function populateUserView(elementID, user){
 //DOM based function
 function populateCouponsView(elementId, coupons) {
     var element = document.getElementById(elementId);
-    var newElement = "<div class='container'>"; 
+    var newElement = "<div class='container'>";
+    newElement += "<div class='row'>";
+    newElement += "<div class='col-lg-10'>";
+    newElement += "<for class='example' action='' style='margin:auto;max-width:950px;margin-bottom;30px'>";
+    newElement += "<input type='text' placeholder='Search...' name='search'>";
+    newElement += "<button type='submit'><iclass='fa fa-search'></i></button>";
+    newElement += "</form></div></div></div><br></br>";
+    //end searchbar
+    newElement += "<div class='container'>";
+    newElement += "<div class='row'>";
+    newElement += "<div class='col-lg-10'>";
+    newElement += "<div class='row'>";
 
     for (var i = 0; i < coupons.length; i++) {
 	for(var j = 0; j < coupons[i].coupons.length; j++){
-
+	    
+	    newElement += "<div class='container'>";
 	    newElement += "<div class='row'>";
 	    newElement += "<div class='col-lg-10'>";
 	    newElement += "<div class='col-lg-4 col-md-6 mb-4'>";
@@ -111,6 +123,7 @@ function populateCouponsView(elementId, coupons) {
 	}
     }
     
+    newElement += "</div></div></div></div>";
 
     element.innerHTML = newElement;
 }
