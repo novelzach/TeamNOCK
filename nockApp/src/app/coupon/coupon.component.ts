@@ -25,7 +25,7 @@ export class CouponComponent implements OnInit {
     private couponService: CouponService
     ) {
 
-      
+/*      
       this.couponId = route.snapshot.params['couponId'];
       couponService.getCoupon(this.couponId)
 	.subscribe(
@@ -36,7 +36,7 @@ export class CouponComponent implements OnInit {
 	    () => {},
 	    () => {}
 	);
-      
+  */    
       }
 
   ngOnInit() {
@@ -46,6 +46,12 @@ export class CouponComponent implements OnInit {
 	    return this.couponService.getCoupon(this.couponId);
 	})
     );*/ 
+    this.route.paramMap.subscribe(params => {
+	this.couponId = params['couponId']
+    });
+    this.couponService.getCoupon(this.couponId).subscribe(result => {
+	this.coupon = result;
+    });
   }
 
 }
