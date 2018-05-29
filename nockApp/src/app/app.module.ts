@@ -12,6 +12,12 @@ import { WelcomeComponent } from './welcome/welcome.component';
 
 const ROUTES = [
   {
+      path: '',
+      redirectTo: 'welcome',
+      pathMatch: 'full'
+  },
+
+  {
       path: 'user',
       component: UserComponent
   },
@@ -24,10 +30,9 @@ const ROUTES = [
       component: CouponComponent
   },
   {
-      path: '',
-      redirectTo: 'welcome',
-      pathMatch: 'full'
-  },
+      path: '**',
+      redirectTo: 'welcome'
+  }
 
 ];
 
