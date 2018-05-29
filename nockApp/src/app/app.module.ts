@@ -8,6 +8,7 @@ import { UserComponent } from './user/user.component';
 import { UserService } from './user.service';
 import { CouponComponent } from './coupon/coupon.component';
 import { CouponService } from './coupon.service';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 const ROUTES = [
   {
@@ -15,12 +16,16 @@ const ROUTES = [
       component: UserComponent
   },
   {
+      path: 'welcome',
+      component: WelcomeComponent
+  },
+  {
       path: 'coupon/:couponID',
       component: CouponComponent
   },
   {
       path: '',
-      redirectTo: 'user',
+      redirectTo: 'welcome',
       pathMatch: 'full'
   },
 
@@ -30,7 +35,8 @@ const ROUTES = [
   declarations: [
     AppComponent,
     UserComponent,
-    CouponComponent
+    CouponComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
