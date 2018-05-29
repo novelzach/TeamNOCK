@@ -11,18 +11,19 @@ import { CouponService } from './coupon.service';
 
 const ROUTES = [
   {
-      path: '',
-      redirectTo: 'user',
-      pathMatch: 'full'
-  },
-  {
       path: 'user',
       component: UserComponent
   },
   {
       path: 'coupon/:couponID',
       component: CouponComponent
-  }
+  },
+  {
+      path: '',
+      redirectTo: 'user',
+      pathMatch: 'full'
+  },
+
 ];
 
 @NgModule({

@@ -39,6 +39,7 @@ var App = /** @class */ (function () {
             var id = req.params.couponID;
             console.log('Query single coupon with id: ' + id);
             _this.Coupons.getCoupon(res, { couponID: id });
+            console.log(id);
         });
         router.get('/coupons/', function (req, res) {
             console.log('Get all coupons');

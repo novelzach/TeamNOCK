@@ -52,6 +52,7 @@ class App{
 	    var id = req.params.couponID;
 	    console.log('Query single coupon with id: ' + id);
 	    this.Coupons.getCoupon(res, {couponID: id});
+	    console.log(id);
 	});
 
 	router.get('/coupons/', (req, res) => {

@@ -1,9 +1,20 @@
+
 <div class="container">
-  <div class="row" *ngFor="let coupon of coupons">
-      <div class="card card-block">
+    <div class="card card-block">
         <h4 class="card-title">{{ coupon.store }}</h4>
-        <p class="card-text">{{ coupon.product }}</p>
-        <a href="#" class="card-link">Coupon link</a>
-      </div>
-  </div>
+        <p class="card-text">test</p>
+	<a href="#" class="card-link">Coupon link</a>
+    </div>
 </div>
+
+
+<!--
+    <ul class="items">
+      <li *ngFor="let item of coupon$ | async"
+        [class.selected]="item.couponID === couponId">
+        <a [routerLink]="['/coupon', item.couponId]">
+          <span class="badge">{{ item.store }}</span>{{ item.product }}
+        </a>
+      </li>
+    </ul>
+-->

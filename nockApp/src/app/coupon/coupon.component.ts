@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Location } from '@angular/common';
+import { Observable } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 import { CouponService } from '../coupon.service';
+import modelCoupon from '../share/modelCoupon';
+import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-coupon',
@@ -10,14 +15,37 @@ import { CouponService } from '../coupon.service';
 })
 export class CouponComponent implements OnInit {
 
-  coupons: any = [];
+  couponId: string;
+  coupon: modelCoupon;
+  store: string;
+  
+  constructor(
+    private route: ActivatedRoute,
+    private location: Location,
+    private couponService: CouponService
+    ) {
 
-  constructor(private couponService: CouponService) { }
+      
+      this.couponId = route.snapshot.params['couponId'];
+      couponService.getCoupon(this.couponId)
+	.subscribe(
+	    result => {
+		this.coupon = result;
+		this.store = result.store;
+	    },
+	    () => {},
+	    () => {}
+	);
+      
+      }
 
   ngOnInit() {
-      this.couponService.getAllCoupons().subscribe(coupons => {
-	  this.coupons = coupons
-      });
+/*      this.coupon = this.route.paramMap.pipe(
+	switchMap((params: ParamMap) => {
+	    this.couponId = params.get('couponId');
+	    return this.couponService.getCoupon(this.couponId);
+	})
+    );*/ 
   }
 
 }
