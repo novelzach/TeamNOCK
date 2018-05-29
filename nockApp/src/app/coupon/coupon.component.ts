@@ -16,45 +16,34 @@ import 'rxjs/add/operator/map';
 export class CouponComponent implements OnInit {
 
   couponId: string;
-  coupon: Coupon;
+  coupon: modelCoupon;
+  product: String;
   store: String;
+  exp_date: Date;
+  discount: Number;
+  token_cost: Number;
   
   constructor(
     private route: ActivatedRoute,
     private location: Location,
     private couponService: CouponService
-    ) {
+    ) { 
+       this.couponId = this.route.snapshot.params['id'];
+          this.couponService.getCoupon(this.couponId).subscribe(result => {
+	  this.coupon = result;
+    });
 
-    /*  
-      this.couponId = route.snapshot.params['couponId'];
-      couponService.getCoupon('1')
-	.subscribe(
-	    result => {
-		this.coupon = result;
-	    },
-	    () => {},
-	    () => {}
-	);
-	this.store = this.coupon.store;
-  */  
       }
 
   ngOnInit() {
-/*      this.coupon = this.route.paramMap.pipe(
-	switchMap((params: ParamMap) => {
-	    this.couponId = params.get('couponId');
-	    return this.couponService.getCoupon(this.couponId);
-	})
-    );*/ 
-/*    this.route.paramMap.subscribe(params => {
-	this.couponId = params['couponId']
-    });*/
 
+/*
+    this.couponId = this.route.snapshot.params['id'];
     this.couponService.getCoupon(this.couponId).subscribe(result => {
 	this.coupon = result;
     });
-    this.store = this.coupon.store;
-    
+*/
+
   }
 
 }
