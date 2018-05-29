@@ -18,7 +18,7 @@ const ROUTES = [
   },
 
   {
-      path: 'user',
+      path: 'user/:id',
       component: UserComponent
   },
   {

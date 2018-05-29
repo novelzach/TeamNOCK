@@ -3,7 +3,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Location } from '@angular/common';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-import { Coupon, CouponService } from '../coupon.service';
+import { CouponService } from '../coupon.service';
 import modelCoupon from '../share/modelCoupon';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/map';
