@@ -6,6 +6,8 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { UserService } from './user.service';
+import { CouponComponent } from './coupon/coupon.component';
+import { CouponService } from './coupon.service';
 
 const ROUTES = [
   {
@@ -16,20 +18,25 @@ const ROUTES = [
   {
       path: 'user',
       component: UserComponent
+  },
+  {
+      path: 'coupon',
+      component: CouponComponent
   }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent
+    UserComponent,
+    CouponComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [UserService],
+  providers: [UserService, CouponService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
