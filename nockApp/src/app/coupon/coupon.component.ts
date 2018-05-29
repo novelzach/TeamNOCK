@@ -3,7 +3,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Location } from '@angular/common';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-import { CouponService } from '../coupon.service';
+import { Coupon, CouponService } from '../coupon.service';
 import modelCoupon from '../share/modelCoupon';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/map';
@@ -16,8 +16,8 @@ import 'rxjs/add/operator/map';
 export class CouponComponent implements OnInit {
 
   couponId: string;
-  coupon: modelCoupon;
-  store: string;
+  coupon: Coupon;
+  store: String;
   
   constructor(
     private route: ActivatedRoute,
@@ -25,18 +25,18 @@ export class CouponComponent implements OnInit {
     private couponService: CouponService
     ) {
 
-/*      
+    /*  
       this.couponId = route.snapshot.params['couponId'];
-      couponService.getCoupon(this.couponId)
+      couponService.getCoupon('1')
 	.subscribe(
 	    result => {
 		this.coupon = result;
-		this.store = result.store;
 	    },
 	    () => {},
 	    () => {}
 	);
-  */    
+	this.store = this.coupon.store;
+  */  
       }
 
   ngOnInit() {
@@ -46,12 +46,15 @@ export class CouponComponent implements OnInit {
 	    return this.couponService.getCoupon(this.couponId);
 	})
     );*/ 
-    this.route.paramMap.subscribe(params => {
+/*    this.route.paramMap.subscribe(params => {
 	this.couponId = params['couponId']
-    });
+    });*/
+
     this.couponService.getCoupon(this.couponId).subscribe(result => {
 	this.coupon = result;
     });
+    this.store = this.coupon.store;
+    
   }
 
 }

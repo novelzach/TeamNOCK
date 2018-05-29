@@ -4,6 +4,21 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import modelCoupon from './share/modelCoupon';
 
+export class Coupon {
+    constructor(
+	public couponID: Number,
+	public product: String,
+	public store: String,
+	public exp_date: Date,
+	public discount: Number,
+	public is_percent: Boolean,
+	public code: String,
+	public image: String,
+	public token_cost: Number,
+	public userID: Number
+	){}
+}
+
 @Injectable({
   providedIn: 'root'
 })
