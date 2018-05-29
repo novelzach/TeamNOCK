@@ -20,7 +20,7 @@ const ROUTES = [
       component: UserComponent
   },
   {
-      path: 'coupon',
+      path: 'coupon/:couponID',
       component: CouponComponent
   }
 ];

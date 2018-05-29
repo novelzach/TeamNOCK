@@ -48,6 +48,12 @@ class App{
 	    this.Users.getUser(res, {userID: id});
 	});
 
+	router.get('/coupon/:couponID', (req, res) => {
+	    var id = req.params.couponID;
+	    console.log('Query single coupon with id: ' + id);
+	    this.Coupons.getCoupon(res, {couponID: id});
+	});
+
 	router.get('/coupons/', (req, res) => {
 	    console.log('Get all coupons');
 	    this.Coupons.retrieveAllCoupons(res);

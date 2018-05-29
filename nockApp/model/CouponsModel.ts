@@ -17,8 +17,7 @@ class CouponsModel {
     public createSchema(): void {
         this.schema = new Mongoose.Schema(
             {
-                userID: Number,
-                fields: [ {
+                couponID: Number,
                 product: String,
                 store: String,
                 exp_date: Date,
@@ -26,13 +25,21 @@ class CouponsModel {
                 is_percent: Boolean,
                 code: String,
                 image: String,
-                token_cost: Number
-                }]
+                token_cost: Number,
+		userID: Number
+            
         });
     }
 
     public createModel(): void {
         this.model = mongooseConnection.model<iCouponsModel>("Coupons", this.schema);
+    }
+
+    public getCoupon(response:any, filter: Object): any {
+	var query = this.model.findOne(filter);
+	query.exec( (err, itemArray) => {
+	    response.json(itemArray);
+	});
     }
 
     public retrieveAllCoupons(response:any): any {

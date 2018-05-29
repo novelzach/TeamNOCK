@@ -1,9 +1,8 @@
 <div class="container">
   <div class="row" *ngFor="let coupon of coupons">
-  <div class="innerRow" *ngFor="let item of coupon.coupons">
       <div class="card card-block">
-        <h4 class="card-title">{{ item.store }}</h4>
-        <p class="card-text">{{ item.product }}</p>
+        <h4 class="card-title">{{ coupon.store }}</h4>
+        <p class="card-text">{{ coupon.product }}</p>
         <a href="#" class="card-link">Coupon link</a>
       </div>
   </div>

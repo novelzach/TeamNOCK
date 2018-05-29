@@ -35,6 +35,11 @@ var App = /** @class */ (function () {
             console.log('Query single user with id: ' + id);
             _this.Users.getUser(res, { userID: id });
         });
+        router.get('/coupon/:couponID', function (req, res) {
+            var id = req.params.couponID;
+            console.log('Query single coupon with id: ' + id);
+            _this.Coupons.getCoupon(res, { couponID: id });
+        });
         router.get('/coupons/', function (req, res) {
             console.log('Get all coupons');
             _this.Coupons.retrieveAllCoupons(res);

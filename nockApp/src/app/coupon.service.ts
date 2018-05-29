@@ -10,7 +10,7 @@ export class CouponService {
   constructor(private http: Http) { }
 
   getAllCoupons() {
-      return this.http.get('app/coupons')
+      return this.http.get('app/coupon/:couponID')
 	.map(res => res.json());
   }
 }
