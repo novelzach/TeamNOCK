@@ -42,6 +42,12 @@ class App{
 	let router = express.Router();
 	//router.get here(need paths first)
 
+	router.use(function (req, res, next){
+	    res.header("Access-Control-Allow-Origin", "*");
+	    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+	    next();
+	});
+
 	router.get('/user/:userID', (req, res) => {
 	    var id = req.params.userID;
 	    console.log('Query single user with id: ' + id);
