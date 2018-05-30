@@ -8,7 +8,7 @@ var assert = chai.assert;
 var should = chai.should();
 var expect = chai.expect;
 
-var http = require(http);
+var http = require('http');
 chai.use(chaiHttp);
 
 describe('Test GET, single object', function() {
