@@ -22,7 +22,7 @@
             <h4 class="card-title">
             <a href="#">Trader: {{ coupon.userID }}</a>
             </h4>
-            <button class="btn btn-success pull-right" ><a [routerLink]="[ '.', 'coupon/:id' ]">Details</a></button>
+            <button type="button" onclick="[{ path: 'coupon/:id', component: CouponComponent }]">Details</button>
           </div>
           <div class="card-footer">
             <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
