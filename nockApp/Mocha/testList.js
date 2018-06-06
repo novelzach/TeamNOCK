@@ -36,7 +36,7 @@ describe('Test Coupons', function(){
 	expect(response.body).to.satisfy(
 	    function(body){
 		for (var i = 0; i < body.length; i++){
-		    expect(body[i].to.have.property('couponID'));//num
+		    expect((body[i].to.have).property('couponID'));//num here is better
 		    expect(body[i].to.have.property('product'));//string
 		    expect(body[i].to.have.property('store'));//string
 		    expect(body[i].to.have.property('exp_date'));//date
@@ -54,4 +54,3 @@ describe('Test Coupons', function(){
 	    });
     });
 });
-

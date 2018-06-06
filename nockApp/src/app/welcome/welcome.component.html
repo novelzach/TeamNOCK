@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row" *ngFor="let coupon of coupons">
+  <div class="row" *ngFor="let coupon of coupons; let i = index">
     <!--div class="card card-block">
         <h4 class="card-title">{{ coupon.store }}</h4>
         <p class="card-text">{{ coupon.product }}</p>
@@ -11,7 +11,7 @@
          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
          <div class="card-body">
             <h4 class="card-title">
-            <a href="#">{{ coupon.product }}</a>
+            <a [routerLink]="['/coupon/',coupon.couponID]" routerLinkActive="active">{{ coupon.product }}</a>
             </h4>
             <h4 class="card-title">
             <a href="#">{{ coupon.store }}</a>
@@ -20,10 +20,8 @@
             <a href="#">Tokens: {{ coupon.token_cost }}</a>
             </h4>
             <h4 class="card-title">
-            <a href="#">Trader: {{ coupon.userID }}</a>
+            <a [routerLink]="['/user/',coupon.userID]" routerLinkActive="active">Trader: {{ coupon.userID }}</a>
             </h4>
-
-            <button type="button" onclick="[{path: 'coupon/:id', component: CouponComponent}]">Details</button>
 
           </div>
           <div class="card-footer">
@@ -35,5 +33,5 @@
 
 </div>
 
-
+<router-outlet></router-outlet>
 
