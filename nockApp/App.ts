@@ -89,7 +89,7 @@ class App{
 	this.expressApp.use('/app', router);
 	this.expressApp.use('/app/json/', express.static('./app/json'));
 	this.expressApp.use('/images', express.static('./img'));
-	this.expressApp.use('/', express.static('./pages'));
+	//this.expressApp.use('/', express.static('./pages'));
 	this.expressApp.use('*', (req, res) => {
 	    res.sendFile(path.join(__dirname, 'dist/nockApp/index.html'));
 	});

@@ -1,4 +1,4 @@
-db = db.getSiblingDB('nock')
+db = db.getSiblingDB('nockdb')
 db.createCollection('users')
 usersCollection = db.getCollection("users")
 usersCollection.remove({})

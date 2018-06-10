@@ -1,5 +1,5 @@
-<div class="container">
-  <div class="row" *ngFor="let coupon of coupons">
+<div class="row card-group">
+  <div class="col-4" *ngFor="let coupon of coupons; let i = index">
     <!--div class="card card-block">
         <h4 class="card-title">{{ coupon.store }}</h4>
         <p class="card-text">{{ coupon.product }}</p>
@@ -7,11 +7,11 @@
     </div-->
 
     <!--div class="col-lg-4 col-md-6 mb-4"-->
-       <div class="card h-10">
-         <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+       <div class="card h-10" style=" margin-top:50px;">
+         <a [routerLink]="['/coupon/',coupon.couponID]" routerLinkActive="active"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
          <div class="card-body">
             <h4 class="card-title">
-            <a href="#">{{ coupon.product }}</a>
+            <a [routerLink]="['/coupon/',coupon.couponID]" routerLinkActive="active">{{ coupon.product }}</a>
             </h4>
             <h4 class="card-title">
             <a href="#">{{ coupon.store }}</a>
@@ -20,17 +20,9 @@
             <a href="#">Tokens: {{ coupon.token_cost }}</a>
             </h4>
             <h4 class="card-title">
-            <a href="#">Trader: {{ coupon.userID }}</a>
+            <a [routerLink]="['/user/',coupon.userID]" routerLinkActive="active">Trader: {{ coupon.userID }}</a>
             </h4>
-<<<<<<< HEAD
-<<<<<<< HEAD
-            <button type="button" onclick="[{path: 'coupon/:id', component: CouponComponent}]">Details</button>
-=======
-            <button class="btn btn-success pull-right" ><a [routerLink]="[ '.', 'coupon/:id' ]">Details</a></button>
->>>>>>> 84b1b7eba1cd275baa2c76bf180c841c8910a271
-=======
-            <button type="button" onclick="[{ path: 'coupon/:id', component: CouponComponent }]">Details</button>
->>>>>>> 4016262f5efc3c660b12b20c1f9ca5028044d02b
+
           </div>
           <div class="card-footer">
             <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
@@ -38,8 +30,6 @@
        </div>
     <!--/div-->
   </div>
-<<<<<<< HEAD
+
 </div>
-=======
-</div>
->>>>>>> 84b1b7eba1cd275baa2c76bf180c841c8910a271
+<router-outlet></router-outlet>

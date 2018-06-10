@@ -46,6 +46,7 @@ const ROUTES = [
   imports: [
     BrowserModule,
     HttpModule,
+    RouterModule,
     RouterModule.forRoot(ROUTES)
   ],
   providers: [UserService, CouponService],
