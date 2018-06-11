@@ -1,7 +1,7 @@
 <html>
   
       <body>
-      <form (ngSubmit)="onSubmit()">
+      <form>
       <div>
           
           <div style="display: inline-block; background-color:white;">
@@ -9,48 +9,48 @@
           <ul>
             <li>
                 <label style ="font-weight: bold;">Product:</label>
-                <input type="text" class="form-control" placeholder="product name" [(ngModel)]="product" name ="product">    
+                <input type="text" class="form-control" placeholder="product name" name ="product">    
             </li>
             <br/>
             <li>
                 <label style ="font-weight: bold;">Store:</label>
-                <input type="text" class="form-control" placeholder="Store name" [(ngModel)]="store" name ="store">
+                <input type="text" class="form-control" placeholder="Store name" name ="store">
                   
             </li>
             <br/>
             <li>
                 <label style ="font-weight: bold;">Exp Date:</label>
-                <input type="date" class="form-control" placeholder="Valid to" [(ngModel)]="exp_date" name ="exp_date">
+                <input type="date" class="form-control" placeholder="Valid to" name ="exp_date">
                    
             </li>
             <br/>
             <li>
                 <label style ="font-weight: bold;">Discount:</label>
-                <input type="number" class="form-control" placeholder="discount" [(ngModel)]="discount" name ="discount">
+                <input type="number" class="form-control" placeholder="discount" name ="discount">
                    
             </li>
             <br/>
             <li>
                 <label style ="font-weight: bold;">Percent:</label>
-                <input type="radio" class="form-control" placeholder="Yes" [(ngModel)]="is_percent" name ="is_percent">
+                <input type="radio" class="form-control" placeholder="Yes" name ="is_percent">
                    
             </li>
             <br/>
             <li>
                 <label style ="font-weight: bold;">Coupon Code:</label>
-                <input type="varchar" class="form-control" placeholder="code" [(ngModel)]="code" name ="code">
+                <input type="varchar" class="form-control" placeholder="code" name ="code">
                    
             </li>
             <br/>
             <li>
                 <label style ="font-weight: bold;">Image (if any):</label>
-                <input type="file" class="form-control" placeholder="" [(ngModel)]="image" name ="image">
+                <input type="file" class="form-control" placeholder="" name ="image">
                    
             </li>
             <br/>
             <li>
                 <label style ="font-weight: bold;">Token Cost</label>
-                <input type="text" class="form-control" placeholder="0" [(ngModel)]="token_cost" name ="token_cost">
+                <input type="text" class="form-control" placeholder="0" name ="token_cost">
                    
             </li>
             <br/>
