@@ -6,7 +6,7 @@ var isValidElement = function isValidElement(element) {
 var formToJSON_deconstructed = function formToJSON_deconstructed(elements) {
 
   var reducerFunction = function reducerFunction(data, element) {
-    data[element.name] = element.valu
+    data[element.name] = element.value
     return data;
   };
 
