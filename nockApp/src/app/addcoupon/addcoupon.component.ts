@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './addcoupon.component.html',
   styleUrls: ['./addcoupon.component.css']
 })
-export class AddcouponComponent implements OnInit {
+export class AddCouponComponent implements OnInit {
 
   constructor() { }
 

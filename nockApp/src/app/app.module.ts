@@ -9,6 +9,7 @@ import { UserService } from './user.service';
 import { CouponComponent } from './coupon/coupon.component';
 import { CouponService } from './coupon.service';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { AddCouponComponent } from './addcoupon/addcoupon.component';
 
 const ROUTES = [
   {
@@ -41,7 +42,8 @@ const ROUTES = [
     AppComponent,
     UserComponent,
     CouponComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    AddCouponComponent
   ],
   imports: [
     BrowserModule,
