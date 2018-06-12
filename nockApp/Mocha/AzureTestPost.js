@@ -12,7 +12,18 @@ chai.use(chaiHttp);
 
 describe('Test Post', function(){
     var response;
-    var testCoupon;
+    var testCoupon = {
+        couponID: 70,
+		product: "Headphones",
+		store: "Best Buy",
+		exp_date: Date("2018-10-27"),
+		discount: 20,
+		is_percent: true,
+		code: "p0o9i8u7",
+		image: "image here",
+        token_cost: 17,
+        userID: 2
+	 };
 
     before(function(done){
         chai.request("http://nock.azurewebsites.net")
@@ -30,6 +41,8 @@ describe('Test Post', function(){
             .end(function(err, res){
                 response = res;
                 expect(response).to.not.be.undefined;
+                expect(response).to.have.property(couponID);
+                expect(response).to.have.property(store);
             });
 
         done();
