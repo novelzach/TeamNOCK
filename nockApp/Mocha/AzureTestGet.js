@@ -23,7 +23,7 @@ describe('Test Get', function(){
             });
     });
 
-    it('shouls return user Charlie for userId 3', function(done){
+    it('should return user Charlie for userId 3', function(done){
         chai.request("http://nock.azurewebsites.net")
             .get("/app/user/3")
             .end(function(err, res){
