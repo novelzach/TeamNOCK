@@ -49,8 +49,9 @@
                 <div class="product_info">
                   <h6 class="product_name"><a [routerLink]="['/coupon/',coupon.couponID]" routerLinkActive="active">{{ coupon.product }} - {{ coupon.store}}</a></h6>
                   <div class="product_price"><a>Tokens: {{ coupon.token_cost }}</a></div>
+                  <h6 class="product_name"><a [routerLink]="['/user/',coupon.userID]" routerLinkActive="active">Trader: {{ coupon.userID }}</a></h6>
                 </div>
-                <h6 class="product_name"><a [routerLink]="['/user/',coupon.userID]" routerLinkActive="active">Trader: {{ coupon.userID }}</a></h6>
+                
               </div>
               <div class="red_button add_to_cart_button"><a [routerLink]="['/coupon/',coupon.couponID]" routerLinkActive="active">Details</a></div>
             </div>
