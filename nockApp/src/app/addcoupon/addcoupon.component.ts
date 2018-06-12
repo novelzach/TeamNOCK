@@ -23,6 +23,23 @@ export class AddCouponComponent implements OnInit {
 
   ngOnInit() {
   }
-  public postCoupon(){};
+  public postCoupon(inProduct: string, inStore: string, inExp: Date, 
+    inDiscount: number, inCode: string)
+  {
+      let newCoupon: modelCoupon = {
+	  couponID: 100,
+	  product: inProduct,
+	  store: inStore,
+	  exp_date: inExp,
+	  discount: inDiscount,
+	  is_percent: false,
+	  code: inCode,
+	  image: null,
+	  token_cost: 5,
+	  userID: 2
+      };
+
+      this.couponService.postCoupon(newCoupon).subscribe(); 
+  };
 
 }
