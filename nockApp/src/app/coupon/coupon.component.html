@@ -1,24 +1,4 @@
 
-<!--div class="container">
-    <div class="card card-block">
-        <h4 class="card-title">{{ coupon.store }}</h4>
-        <p class="card-text">{{ coupon.product }}</p>
-	<a href="#" class="card-link">Coupon link</a>
-    </div>
-</div-->
-
-
-<!--
-    <ul class="items">
-      <li *ngFor="let item of coupon$ | async"
-        [class.selected]="item.couponID === couponId">
-        <a [routerLink]="['/coupon', item.couponId]">
-          <span class="badge">{{ item.store }}</span>{{ item.product }}
-        </a>
-      </li>
-    </ul>
--->
-<!--
 <div class="col-lg-4 col-md-6 mb-4">
    <div class="card h-10">
       <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
@@ -48,33 +28,20 @@
           </div>
   </div>
 </div>
--->
-<div class="col-lg-4 col-md-6 mb-4">
-   <div class="card h-10">
-      <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-        <div class="card-body">
-            <h4 class="card-title">
-            <a>Product: {{ coupon.product }}</a>
-            </h4>
-            <h4 class="card-title">
-            <a>Store: {{ coupon.store }}</a>
-            </h4>
-            <h4 class="card-title">
-            <a>Tokens:{{ coupon.token_cost }}</a>
-            </h4>
-            <h4 class="card-title">
-            <a>Discount: {{ coupon.discount }} % OFF</a>
-            </h4>
-            <h4 class="card-title">
-            <a>Coupon Code: {{ coupon.code }} </a>
-            </h4>
-            <h4 class="card-title">
-            <a>Trader: {{ coupon.userID }} </a>
-            </h4>
-            <button type="button" onclick="#">BUY</button>
-        </div>
-          <div class="card-footer">
-            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-          </div>
-  </div>
-</div>
+<!-- new coupon-->
+            <div>
+              <div>
+                <div class="product_image">
+                  <img src="../../vendor/images/product_1.png" alt="">
+                </div>
+                <div class="product_info">
+                  <h6 class="product_name"><a>{{ coupon.product }} - {{ coupon.store}}</a></h6>
+                  <h6 class="product_price"><a>Tokens: {{ coupon.token_cost }}</a></h6>
+                  <h6 class="product_price"><a>Discount: {{ coupon.discount }} % OFF</a></h6>
+                  <h6 class="product_price"><a>Coupon Code: {{ coupon.code }} </a></h6>
+                  <h6 class="product_name"><a>Trader: {{ coupon.userID }}</a></h6>
+                </div>
+                
+              </div>
+              <div class="red_button add_to_cart_button"><a [routerLink]="['/coupon/',coupon.couponID]" routerLinkActive="active">Buy</a></div>
+            </div>
