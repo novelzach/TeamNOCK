@@ -24,4 +24,4 @@ describe('Test Post', function(){
     });
 
 
-})
+});
