@@ -12,15 +12,22 @@ chai.use(chaiHttp);
 
 describe('Test Post', function(){
     var response;
+    var testCoupon;
 
     before(function(done){
         chai.request("http://nock.azurewebsites.net")
-            .post('/whatever the post tage are')
+            .post('/app/coupons', testCoupon)
             .end(function(err, res){
                 expect(err).to.be.null;
                 expect(res).to.have.status(200 || 304);
                 done();
             });
+    });
+
+    it('should successfully post a coupon', function(){
+        
+
+        done();
     });
 
 
