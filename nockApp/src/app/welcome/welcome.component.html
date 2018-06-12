@@ -1,5 +1,17 @@
+<div class="main_slider" style="background-image:url(../../vendor/images/slider_1.jpg)">
+    <div class="container fill_height">
+      <div class="row align-items-center fill_height">
+        <div class="col">
+          <div class="main_slider_content">
+            <h1>Great Discounts this summer</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 <div class="row card-group">
-  <div class="col-4" *ngFor="let coupon of coupons; let i = index">
+  <div *ngFor="let coupon of coupons; let i = index">
     <!--div class="card card-block">
         <h4 class="card-title">{{ coupon.store }}</h4>
         <p class="card-text">{{ coupon.product }}</p>
@@ -7,7 +19,7 @@
     </div-->
 
     <!--div class="col-lg-4 col-md-6 mb-4"-->
-       <div class="card h-10" style=" margin-top:50px;">
+       <!--div class="card h-10" style=" margin-top:50px;">
          <a [routerLink]="['/coupon/',coupon.couponID]" routerLinkActive="active"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
          <div class="card-body">
             <h4 class="card-title">
@@ -27,8 +39,21 @@
           <div class="card-footer">
             <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
           </div>
-       </div>
+       </div-->
     <!--/div-->
+    <div>
+              <div>
+                <div class="product_image">
+                  <img src="../../vendor/images/product_1.png" alt="">
+                </div>
+                <div class="product_info">
+                  <h6 class="product_name"><a [routerLink]="['/coupon/',coupon.couponID]" routerLinkActive="active">{{ coupon.product }} - {{ coupon.store}}</a></h6>
+                  <div class="product_price"><a>Tokens: {{ coupon.token_cost }}</a></div>
+                </div>
+                <h6 class="product_name"><a [routerLink]="['/user/',coupon.userID]" routerLinkActive="active">Trader: {{ coupon.userID }}</a></h6>
+              </div>
+              <div class="red_button add_to_cart_button"><a [routerLink]="['/coupon/',coupon.couponID]" routerLinkActive="active">Details</a></div>
+            </div>
   </div>
 
 </div>

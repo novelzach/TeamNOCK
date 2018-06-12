@@ -1,9 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
-@import './css/shop-homepage.css';
-@import './css/round-about.css';
+/*@import './css/shop-homepage.css';
+@import './css/round-about.css';*/
 @import './vendor/bootstrap/css/bootstrap.css';
 @import './vendor/bootstrap/css/bootstrap.min.css';
 @import './vendor/bootstrap/css/bootstrap-grid.css';
 @import './vendor/bootstrap/css/bootstrap-grid.min.css';
 @import './vendor/bootstrap/css/bootstrap-reboot.css';
 @import './vendor/bootstrap/css/bootstrap-reboot.min.css';
+
+
+@import './css/categories_responsive.css';
+@import './css/categories_styles.css';
+@import './css/contact_responsive.css';
+@import './css/contact_styles.css';
+@import './css/main_styles.css';
+@import './css/responsive.css';
+@import './css/single_responsive.css';
+@import './css/single_styles.css';
+/*@import './vendor/bootstrap4/css/bootstrap.min.css';*/
+
