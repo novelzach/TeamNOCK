@@ -31,6 +31,10 @@ const ROUTES = [
       component: CouponComponent
   },
   {
+      path: 'addcoupon',
+      component: AddCouponComponent
+  },
+  {
       path: '**',
       redirectTo: 'welcome'
   }

@@ -12,6 +12,13 @@ export class AddcouponService {
 
   constructor() { }
 
+
+
+
+
+
+
+/*
   formToJSON(elements) {
     return [].reduce.call(elements, function (data, element) {
       if (element.name && element.value) {      
@@ -20,5 +27,6 @@ export class AddcouponService {
       return this.http.post('app/coupons/' + data)
     }, {})
   }
+*/
 
 }

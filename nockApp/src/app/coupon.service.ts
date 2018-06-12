@@ -34,4 +34,8 @@ export class CouponService {
       return this.http.get('app/coupons/')
 	.map(res => res.json());
   }
+  postCoupon(newCoupon: modelCoupon): Observable<modelCoupon>{
+      return this.http.post('app/coupons', newCoupon)
+	.map(res => res.json());
+  }
 }

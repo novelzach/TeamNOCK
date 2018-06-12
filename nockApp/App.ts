@@ -70,6 +70,30 @@ class App{
 	    console.log('Get all users');
 	    this.Users.retrieveAllUsers(res);
 	});
+
+	router.post('/coupons', (req, res) => {
+              console.log('Post request body: ${req.body}');
+              var jsonObj: any = {};
+              jsonObj.couponID = this.idGenerator;
+              jsonObj.product = req.body.product;
+              jsonObj.store = req.body.store;
+              jsonObj.exp_date = req.body.exp_date;
+              jsonObj.discount = req.body.discount;
+              jsonObj.is_percent = req.body.is_percent;
+              jsonObj.code = req.body.code;
+              jsonObj.image = req.body.image;
+              jsonObj.token_cost = 5;
+             jsonObj.userID = req.body.userID;
+              this.Coupons.model.create([jsonObj], (err) => {
+                  if (err) {
+                      console.log('Object creation failed');
+                  }
+              });
+              res.send(jsonObj);
+	    this.idGenerator++;
+        });
+	
+
 /*
 	router.post('/coupons/', (req,res) => {
 	    console.log(req.body);

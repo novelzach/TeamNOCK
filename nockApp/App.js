@@ -54,6 +54,27 @@ var App = /** @class */ (function () {
             console.log('Get all users');
             _this.Users.retrieveAllUsers(res);
         });
+        router.post('/coupons', function (req, res) {
+            console.log('Post request body: ${req.body}');
+            var jsonObj = {};
+            jsonObj.couponID = _this.idGenerator;
+            jsonObj.product = req.body.product;
+            jsonObj.store = req.body.store;
+            jsonObj.exp_date = req.body.exp_date;
+            jsonObj.discount = req.body.discount;
+            jsonObj.is_percent = req.body.is_percent;
+            jsonObj.code = req.body.code;
+            jsonObj.image = req.body.image;
+            jsonObj.token_cost = 5;
+            jsonObj.userID = req.body.userID;
+            _this.Coupons.model.create([jsonObj], function (err) {
+                if (err) {
+                    console.log('Object creation failed');
+                }
+            });
+            res.send(jsonObj);
+            _this.idGenerator++;
+        });
         /*
             router.post('/coupons/', (req,res) => {
                 console.log(req.body);
