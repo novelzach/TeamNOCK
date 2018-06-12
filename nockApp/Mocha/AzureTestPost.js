@@ -10,27 +10,18 @@ var should = chai.should();
 var http = require('http');
 chai.use(chaiHttp);
 
-describe('Test Get', function(){
+describe('Test Post', function(){
     var response;
 
     before(function(done){
         chai.request("http://nock.azurewebsites.net")
-            .get("/app/user/3")
+            .post('/whatever the post tage are')
             .end(function(err, res){
                 expect(err).to.be.null;
-                expect(res).to.have.status( 200 || 304 ); //potential redirect
+                expect(res).to.have.status(200 || 304);
                 done();
             });
     });
 
-    it('shouls return user Charlie for userId 3', function(done){
-        chai.request("http://nock.azurewebsites.net")
-            .get("/app/user/3")
-            .end(function(err, res){
-                response = res;
-                assert.equal("rothbach", response.user);
-                done();
-            });
-    }); 
 
-});
+})
