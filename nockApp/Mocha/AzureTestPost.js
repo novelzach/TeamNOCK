@@ -25,7 +25,12 @@ describe('Test Post', function(){
     });
 
     it('should successfully post a coupon', function(){
-        
+        chai.request("http://nock.azurewebsites.net")
+            .get('/app/coupons/testCoupon')
+            .end(function(err, res){
+                response = res;
+                expect(response).to.not.be.undefined;
+            });
 
         done();
     });
