@@ -21,7 +21,7 @@ class UserModel {
                 fname: String,
                 lname: String,
                 email: String,
-                user: String,
+                user: {type:String, required:true, unique:true},
                 pass: String,
                 tokens: Number
             }, 
