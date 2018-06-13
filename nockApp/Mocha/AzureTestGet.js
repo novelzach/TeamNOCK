@@ -27,7 +27,7 @@ describe('Test Get', function(){
         chai.request("http://nock.azurewebsites.net")
             .get("/app/user/3")
             .end(function(err, res){
-                response = res;
+                response = res.body;
                 assert.equal("rothbach", response.user);
                 done();
             });
