@@ -28,7 +28,9 @@ class CouponsModel {
                 token_cost: Number,
 		userID: Number
             
-        });
+        }, 
+        {collection: 'Coupons'}
+        );
     }
 
     public createModel(): void {

@@ -17,14 +17,16 @@ class UserModel {
     public createSchema(): void {
         this.schema = new Mongoose.Schema(
             {
-		userID: Number,
+		        userID: Number,
                 fname: String,
                 lname: String,
                 email: String,
                 user: String,
                 pass: String,
                 tokens: Number
-            });
+            }, 
+            {collection: 'Users'}
+        );
     }
 
     public createModel(): void {
